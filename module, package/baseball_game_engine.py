@@ -23,6 +23,7 @@ def check(guess, answer):
     return strike, ball
 
 if __name__ == '__main__':
+    cnt = 0
     while True:
         guess = input('맞춰라!! >> ')  # 숫자 묻기
         strike, ball = check(guess, answer)  # strike, ball 판정
@@ -30,3 +31,6 @@ if __name__ == '__main__':
         if answer == guess:  # 정답 == 숫자 면 끝내기
             print('>>>>>>>>> 정답이다 하하 <<<<<<<<<<')
             break
+
+
+
