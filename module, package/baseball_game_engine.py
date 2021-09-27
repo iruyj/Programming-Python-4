@@ -24,16 +24,17 @@ def check(guess, answer):
 
 if __name__ == '__main__':
     cnt = 0
+    # 인덱스 에러표시ㅇ
     while True:
         guess = input('맞춰라!! >> ')  # 숫자 묻기
-        # 인덱스 에러표시ㅇ
         try:
             guess_int = int(guess)
         except ValueError as e:
             print('숫자를 입력하세요')
             continue
         if len(guess) != len(answer):
-            raise InvalidLengthError('입력하신 답이 정답의 길이와 다릅니다') # raise = throw 에러로 보내는거
+            raise InvalidLengthError(f'입력하신 답이 정답의 길이와 다릅니다. {len(answer)}글자')
+            # raise = throw 에러로 보내는거
 
         strike, ball = check(guess, answer)  # strike, ball 판정
         print(f'{guess}\tstrike : {strike}, ball : {ball}')  # 출력하기
