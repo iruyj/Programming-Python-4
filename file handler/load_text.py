@@ -19,3 +19,13 @@ lines = f.readlines()
 f.close()
 for line in lines:
     print(line.rstrip())
+
+#퀴즈
+#이름 : 전유리[tab]좋아하는 색 : 초록색
+#이름 : 이유빈[tab]좋아하는 색 : 초록색
+f = open('text.txt','r', encoding='utf-8')
+lines = f.readlines()
+f.close()
+for line in lines:
+    datas = line.split(':')
+    print('이름:'+datas[0].rstrip()+"\t좋아하는 색 : "+datas[1].rstrip())
