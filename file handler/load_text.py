@@ -2,8 +2,11 @@ print('전체 한꺼번에 읽기')
 f = open('text.txt', 'r', encoding='utf-8')  # utf-8 : 읽는것과 쓰는것의 형식이 같아야함
 data = f.read()
 f.close()
-
 print(data)
+
+with open('text.txt','r', encoding='utf-8') as f:
+    data = f.read()
+
 print('한줄 씩 읽기')
 f = open('text.txt', 'r', encoding='utf-8')
 while True:
