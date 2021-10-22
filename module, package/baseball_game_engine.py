@@ -41,6 +41,3 @@ if __name__ == '__main__':
         if answer == guess:  # 정답 == 숫자 면 끝내기
             print('>>>>>>>>> 정답이다 하하 <<<<<<<<<<')
             break
-
-
-
