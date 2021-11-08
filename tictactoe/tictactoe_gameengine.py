@@ -1,6 +1,7 @@
 class TictactoeGameEngine:
     def __init__(self):
-        self.board = list('.' * 9)      #['.','.','.','.','.','.','.','.']
+        self.SIZE = 3
+        self.board = list('.' * (self.SIZE*self.SIZE))      #['.','.','.','.','.','.','.','.']
         self.turn = 'X'
 
     def show_board(self):
@@ -15,6 +16,7 @@ class TictactoeGameEngine:
 
     def position_to_index(self, row,col):
         return 3*(row-1)+(col-1)
+
     def set_winner(self):
         # 파이썬 문제 풀이 ----------------
         # 가로 세로
