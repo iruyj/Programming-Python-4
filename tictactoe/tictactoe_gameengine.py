@@ -8,7 +8,7 @@ class TictactoeGameEngine:
         # 풀이
         for i, v in enumerate(self.board):
             print(v+' ', end='')
-            if i % 3==2:
+            if i % 3 == 2:
                 print()
 
     def set(self, row, col):

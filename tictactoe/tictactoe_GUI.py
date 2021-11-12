@@ -28,6 +28,23 @@ class TictactoeGUI:
 
         self.root.mainloop()
 
+    def draw_board(self):
+        TILE_SIZE = self.CANVAS_SIZE // self.game_engine.SIZE
+        x = 0
+        y = 0
+
+        for i, v in enumerate(self.game_engine.board):
+            if v == '.':
+                pass
+            else:   # elif v == 'X' or v == 'O'
+                # 이미지 화면에 그리기
+                self.canvas.create_image(x,y, anchor = 'nw', image=self.images[v])
+            x += TILE_SIZE
+
+            if i % self.game_engine.SIZE == self.game_engine.SIZE -1:
+                x=0;
+                y+=TILE_SIZE
+
     def coordinate_to_position(self, x, y):
         return y//100+1, x//100+1    # 열, 행을 100으로 나누고 소수점 버림
 
@@ -39,6 +56,7 @@ class TictactoeGUI:
         self.game_engine.set(row,col)
         # # show board
         self.game_engine.show_board()
+        self.draw_board()
         # set winner
         winner = self.game_engine.set_winner()
         # 승자가 있거나 무승부면, 게임오버, 결과 표시하기
